@@ -1,0 +1,14 @@
+Steps to Create the project
+
+
+1.Create a class library and framework should be 4.6.2
+2.Right click on reference manage nuget and type Microsoft.CrmSdk.CoreTools
+3.Go to the core tools folder and copy the crmsvcutil.exe to the bin folder of the project
+4.Right click on reference manage nuget and intall Microsoft.CrmSdk.CoreAssemblies
+5.Create a xml file where we will provide details for the entities to create early bound class
+6.Build the project Solution
+7.Copy the xml file we have created and paste it in debug folder of the project solution
+8.Open Command Prompt and go to the debug folder of the project and run the following command
+CrmSvcUtil.exe /url:https://yourorgurl/XRMServices/2011/Organization.svc    /out:GeneratedCode.cs /username:"username.onmicrosoft.com" /password:"password" 
+9.After successfully running the command GeneratedCode.cs will be available in bin folder
+10.Go back to visual studio and right click on project add existing item and select GeneratedCode.cs
